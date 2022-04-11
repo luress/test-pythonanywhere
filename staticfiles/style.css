@@ -1,0 +1,19 @@
+.link-style{
+    text-decoration: none;
+    color:rgb(28,90,4)
+}
+
+.link-style:hover{
+    text-decoration: none;
+    color: grey;
+}
+
+.login-style{
+    width: 500px;
+    height: auto;
+}
+
+.question-style{
+    width: 700px;
+    height: auto;
+}

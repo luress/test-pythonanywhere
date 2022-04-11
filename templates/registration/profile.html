@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}Change Profile{% endblock %}
+
+{% block body %}
+    <div class="container login-style mt-5">
+    {% if messages %}
+        {% for msg in messages %}
+            <div class="alert alert-{{ msg.level_tag }}" role="alert">
+            {{ msg.message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <h2>Change PRofle</h2>
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {{ form| crispy }}
+            <input type="submit" value="Change Profile" class="btn btn-success">
+        </form>
+    </div>
+{% endblock %}

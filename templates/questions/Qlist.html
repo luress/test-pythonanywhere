@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}Question List{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        {% for question in all_questions %}
+            <div class="card mt-3 shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><a class="link-style" href="{% url 'qdetails' question.slug %}">{{ question.title }}</a></h5>
+                    <p class="card-text">{{ question.body }}</p>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col col-md-auto">
+                                Posted By: {{ question.author.username }}
+                            </div>
+                            <div class="col col-md-auto">
+                                Answers: {{ question.answers.count }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
